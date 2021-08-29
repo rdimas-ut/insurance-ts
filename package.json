@@ -1,0 +1,59 @@
+{
+  "name": "insurance-ts",
+  "version": "0.0.1",
+  "description": "Insurance Management System",
+  "main": "index.tsx",
+  "scripts": {
+    "react-start": "webpack serve --config webpack.config.js --mode development",
+    "react-build": "webpack --mode development",
+    "electron-compile-main": "tsc public/main.ts --outDir build --module commonjs --esModuleInterop true",
+    "electron-start": "tsc public/main.ts --outDir build --module commonjs --esModuleInterop true && webpack --mode development && concurrently \"electron .\" \"webpack serve --config webpack.config.js --mode development\"",
+    "electron-build": "tsc public/main.ts --outDir build --module commonjs --esModuleInterop true && webpack --mode production && electron-builder build --win -c.extraMetadata.main=build/main.js --publish never"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdimas-ut/insurance-ts.git"
+  },
+  "author": "Ruben Dimas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdimas-ut/insurance-ts/issues"
+  },
+  "build": {
+    "files": [
+      "./build/**/*",
+      "./node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "insurance-ts",
+      "owner": "rdimas-ut"
+    },
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "homepage": "https://github.com/rdimas-ut/insurance-ts#readme",
+  "devDependencies": {
+    "@types/bootstrap": "^5.0.17",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "concurrently": "^6.2.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.0.0",
+    "electron": "13.1.7",
+    "electron-builder": "^22.11.7",
+    "style-loader": "^3.1.0",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.5",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "electron-is-dev": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

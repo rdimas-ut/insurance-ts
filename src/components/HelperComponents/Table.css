@@ -1,0 +1,23 @@
+/* Tables */
+
+.Table {
+    padding: 20px;
+  }
+  
+.Table div {
+    border-bottom: 1px solid #555;
+    display: table;
+}
+  
+.Table div,
+.Table div table,
+.Table div table thead,
+.Table div table tbody {
+    width: 100%;
+}
+
+.Table div table thead th,
+.Table div table tbody td {
+    padding: 0.5rem;
+    text-align: left;
+}
